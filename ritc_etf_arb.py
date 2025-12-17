@@ -1,29 +1,9 @@
-"""
-RIT Market Simulator Algorithmic ETF Arbitrage Case - Support File
-Rotman BMO Finance Research and Trading Lab, Uniersity of Toronto (C)
-All rights reserved.
-"""
-
 import requests
 from time import sleep
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
 from datetime import datetime, timezone
-
-'''
-If you are not familiar with Python or feeling a little bit rusty, highly recommend you to go through the following link:
-    https://github.com/trekhleb/learn-python
-
-If you have any question about REST APIs and outputs of code please read:
-    https://realpython.com/api-integration-in-python/#http-methods
-    https://rit.306w.ca/RIT-REST-API/1.0.3/?port=9999&key=Rotman#/
-
-So bascially：
-The core of this case is to design algorithmic trading strategies that exploit arbitrage opportunities between the ETF (RITC) 
-and its underlying stocks (BULL and BEAR), while effectively using tender offers and conversion tools to avoid speculative risk
-and maximize returns.
-'''
 
 API = "http://localhost:9999/v1"
 API_KEY = "OR96FJU1"                     # <-- your key
@@ -1176,3 +1156,4 @@ if __name__ == "__main__":
     # warmup_ticks only applies to data collection; other strategies (FX, tenders, imbalance)
     # will still operate in step_once once main begins.
     start_on_active(warmup_ticks=10, poll_interval=0.5)
+
